@@ -1,0 +1,63 @@
+<h1>New Track</h1>
+
+<% if flash[:errors] %>
+  <%= flash[:errors] %>
+<% end %>
+
+<form action="/tracks" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+  <p>
+    <label for="track_title">Title:</label>
+    <input
+      type="text"
+      id="track_title"
+      name="track[title]"
+      value="<%= @track.title %>">
+  </p>
+
+  <p>
+    <label for="album_name">Album:</label>
+    <select name="track[album_id]" id="album_name">
+      <option></option>
+      <%= @albums.each do |album| %>
+        <option
+          value="<%= album.id %>"
+          <%= 'selected' if album.id == @track.album_id %>>
+          <%= album.title %>
+        </option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <input
+      type="radio"
+      name="track[track_type]"
+      value="Regular"
+      id="regular_track"
+      <%= 'checked' if @track.track_type == "Regular" %>>
+    <label for="regular_track">Regular</label>
+
+    <input
+      type="radio"
+      name="track[track_type]"
+      value="Bonus"
+      id="bonus_track"
+      <%= 'checked' if @track.track_type == "Bonus" %>>
+    <lable for="bonus_track">Bonus</label>
+  </p>
+
+  <p>
+    <label for="lyrics">Lyrics:</label><br>
+    <textarea
+      id="lyrics"
+      name="track[lyrics]"
+      placeholder="Type Lyrics"><%= @track.lyrics %></textarea>
+  </p>
+
+  <input type="submit" value="Submit">
+</form>

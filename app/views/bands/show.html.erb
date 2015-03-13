@@ -9,4 +9,15 @@ Albums:
   <% end %>
 </ul>
 
-<%=link_to "Back to Artists", bands_url %>
+<p>
+  <%= link_to "Add Album", new_band_album_url(@band) %>
+</p>
+
+<p>
+  <%= link_to "Edit Artist", edit_band_url(@band) %>
+  <%= link_to "Delete Artist", band_url(@band), method: :delete %>
+</p>
+
+<p>
+  <%=link_to "Back to Artists", bands_url %>
+</p>
