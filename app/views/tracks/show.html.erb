@@ -15,3 +15,16 @@
 <p>
   <%= link_to "Back to Album", album_url(@album) %>
 </p>
+<br>
+
+<hr>
+
+<p>
+  <h3>Notes:</h3>
+  <% @track.notes.each do |note| %>
+    <%= render 'notes/note', note: note %>
+  <% end %>
+  <% if current_user %>
+    <%= render "notes/form", track: @track %>
+  <% end %>
+</p>

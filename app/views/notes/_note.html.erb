@@ -1,0 +1,9 @@
+<p>
+  <%= note.body %>
+  <br>
+  <% if current_user == note.user %>
+    <%= link_to "Delete", note_url(note), method: :delete %>
+  <% else %>
+  <%= link_to note.user.email, user_url(note.user) %>
+  <% end %>
+</p>

@@ -25,3 +25,19 @@ Track.create(title: "Elvis", album_id: 3, track_type: "Regular",
   lyrics: "1960.")
 Track.create(title: "Bam", album_id: 4, track_type: "Bonus",
   lyrics: "What we want!")
+
+User.create(email: "tripp", password: "davis")
+User.create(email: "davis", password: "tripp")
+User.create(email: "kenneth", password: "davis")
+
+Note.create(user_id: 1, track_id: 1, body: "Note1")
+Note.create(user_id: 2, track_id: 1, body: "Note2")
+Note.create(user_id: 1, track_id: 1, body: "Note3")
+Note.create(user_id: 1, track_id: 2, body: "Note4")
+Note.create(user_id: 2, track_id: 2, body: "Note5")
+Note.create(user_id: 3, track_id: 1, body: "Note6")
+Note.create(user_id: 1, track_id: 1,
+  body: "This is a really long note cause I want to see what the text looks
+  like and see what I need to do to wrap the text and I will figure it out
+  and make it look nice and be presentable ds;lkajdl;jas;fdl;asjldkjasl;kj
+  asdl;asjldjsl;ajdl;kasjdllaksjdl;jasjdl;kasjdl;kjasl;kj")
