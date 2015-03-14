@@ -1,4 +1,6 @@
-<h1>Sign In</h1>
+<%= render "/shared/top", logging_in: true, signing_up: false %>
+
+<h1>Log In</h1>
 
 <% if flash[:errors] %>
   <%= flash[:errors] %>

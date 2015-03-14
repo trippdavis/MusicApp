@@ -1,18 +1,4 @@
-<% if current_user %>
-  <strong><%= current_user.email %></strong>
-  <br>
-  <form action="/session" method="post">
-    <input
-      type="hidden"
-      name="_method"
-      value="delete">
-    <input
-      type="hidden"
-      name="authenticity_token"
-      value="<%= form_authenticity_token %>">
+<%= render "/shared/top", logging_in: false, signing_up: false %>
 
-    <%= button_to "Sign-out", session_url, method: :delete %>
-  </form>
-<% end %>
 <br>
 This page belongs to <%= @user.email %>.
