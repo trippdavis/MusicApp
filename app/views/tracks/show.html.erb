@@ -4,8 +4,10 @@
 <h3><%= @track.album.title %>-<%= @track.track_type %></h3>
 <p>
   Lyrics:
-  <%= @track.lyrics %>
+  <%= ("<pre>#{ugly_lyrics(@track.lyrics)}</pre>").html_safe %>
 </p>
+
+<br>
 
 <p>
   <%= link_to "Edit Track", edit_track_url(@track) %>
@@ -15,7 +17,6 @@
 <p>
   <%= link_to "Back to Album", album_url(@album) %>
 </p>
-<br>
 
 <hr>
 
